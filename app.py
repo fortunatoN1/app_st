@@ -94,11 +94,11 @@ if seletor == 'Inscrições':
     ############### STREAMLIT ######################
     st.markdown("""
     <style>
-    .e1fb0mya1.css-fblp2m ex0cdmw0
+    .e1fb0mya1.css-fblp2m.ex0cdmw0
     {
         visibility: hidden;
     }
-    .css-fblp2m.ex0cdmw0
+    .css-cio0dv.egzxvld1
     {
         visibility: hidden;
     }
