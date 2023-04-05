@@ -106,6 +106,10 @@ if seletor == 'Inscrições':
     {
         visibility: hidden;
     }
+    .css-1rs6os.edgvbvh3
+    {
+        visibility: show;
+    }
     </style>
     """,unsafe_allow_html = True)
     c1, c2, c3 = st.columns(3)
