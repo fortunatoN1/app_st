@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import time
-from streamlit.theme import Theme
+from st.theme import Theme
 theme = {
     "backgroundColor": "#212121",
     "textColor": "#F8F8F8",
