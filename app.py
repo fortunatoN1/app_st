@@ -94,6 +94,11 @@ if seletor == 'Inscrições':
     ############### STREAMLIT ######################
     st.markdown("""
     <style>
+    
+    .css-10pw50.egzxvld1
+    {
+        visibility: hidden;
+    }
     .viewerBadge_link__1S137
     {
         visibility: hidden;
