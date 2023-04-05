@@ -9,7 +9,7 @@ theme = {
     "primaryColor": "#FF9800",
     "secondaryBackgroundColor": "#303030",
 }
-
+Theme(theme)
 st.set_page_config(layout="wide",initial_sidebar_state='expanded')
 
 #PG_INSCRICOES
