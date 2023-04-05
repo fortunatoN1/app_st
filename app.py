@@ -108,7 +108,7 @@ if seletor == 'Inscrições':
     }
     .css-1rs6os.edgvbvh3
     {
-        visibility: show;
+        visibility: visible;
     }
     </style>
     """,unsafe_allow_html = True)
