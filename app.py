@@ -92,7 +92,14 @@ if seletor == 'Inscrições':
 
 
     ############### STREAMLIT ######################
-
+    st.markdown("""
+    <style>
+    .css-1wbqy5l.e10z71041
+    {
+        visibility: hidden;
+    }
+    </style>
+    """,unsafe_allow_html = True)
     c1, c2, c3 = st.columns(3)
     with c1:
         st.title('Relatório de Inscrições')
