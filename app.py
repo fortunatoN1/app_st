@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 import time
 
-
+st.set_page_config(layout="wide",initial_sidebar_state='expanded')
 
 #PG_INSCRICOES
 with st.sidebar:
