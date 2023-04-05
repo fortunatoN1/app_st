@@ -145,7 +145,7 @@ if seletor == 'Inscrições':
         t1, t2 = st.tabs(['Gráfico', 'Tabela'])
         cargo_fig = cargo_form_grupo.query('TITULO == @f_formacao')[['CARGO_MAT1', 'NUM_SERVIDORES']]
         if f_formacao !='TODAS AS FORMAÇÕES':
-            t1.plotly_chart(px.pie(cargo_fig,values='NUM_SERVIDORES',names = 'CARGO_MAT1'),hole = 20)
+            t1.plotly_chart(px.pie(cargo_fig,values='NUM_SERVIDORES',names = 'CARGO_MAT1'),hole = 2.0)
             t2.dataframe(cargo_fig)
         else:
             cargo_form_grupo_total = tbl_cargos_funcao_form.groupby(['CARGO_MAT1']).size().reset_index(name='NUM_SERVIDORES')
@@ -192,4 +192,4 @@ if seletor == 'Inscrições':
             tab1.bar_chart(tbl_bar_total, x='REGIAO_ID_MATRICULA', y='NUM_SERVIDORES')
             tab2.dataframe(tbl_bar_total)
 else:
-    st.title('Calma Carai')
+    st.title('Calma... vai ficar pronto em breve!')
