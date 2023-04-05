@@ -145,7 +145,7 @@ if seletor == 'Inscrições':
         t1, t2 = st.tabs(['Gráfico', 'Tabela'])
         cargo_fig = cargo_form_grupo.query('TITULO == @f_formacao')[['CARGO_MAT1', 'NUM_SERVIDORES']]
         if f_formacao !='TODAS AS FORMAÇÕES':
-            t1.plotly_chart(px.pie(cargo_fig,values='NUM_SERVIDORES',names = 'CARGO_MAT1',hole =.3).update_traces(textposition='inside'))
+            t1.plotly_chart(px.pie(cargo_fig,values='NUM_SERVIDORES',names = 'CARGO_MAT1',hole =.3,width = 150).update_traces(textposition='inside'))
             t2.dataframe(cargo_fig)
         else:
             cargo_form_grupo_total = tbl_cargos_funcao_form.groupby(['CARGO_MAT1']).size().reset_index(name='NUM_SERVIDORES')
