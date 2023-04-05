@@ -94,7 +94,7 @@ if seletor == 'Inscrições':
     ############### STREAMLIT ######################
     st.markdown("""
     <style>
-    .css-1wbqy5l.e10z71041
+    .e1fb0mya1.css-fblp2m ex0cdmw0
     {
         visibility: hidden;
     }
@@ -102,14 +102,7 @@ if seletor == 'Inscrições':
     {
         visibility: hidden;
     }
-    .css-cio0dv.egzxvld1
-    {
-        visibility: hidden;
-    }
-    .css-1rs6os.edgvbvh3
-    {
-        visibility: visible;
-    }
+ 
     </style>
     """,unsafe_allow_html = True)
     c1, c2, c3 = st.columns(3)
