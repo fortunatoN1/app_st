@@ -2,15 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import time
-from streamlit.theme import Theme
 
-theme = {
-    "backgroundColor": "#212121",
-    "textColor": "#F8F8F8",
-    "primaryColor": "#FF9800",
-    "secondaryBackgroundColor": "#303030",
-}
-Theme(theme)
 st.set_page_config(layout="wide",initial_sidebar_state='expanded')
 
 #PG_INSCRICOES
