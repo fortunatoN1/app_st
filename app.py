@@ -652,7 +652,7 @@ else:
             barmode='group'
         )
         fig = go.Figure(data = data,layout = layout).update_layout(
-            width = 600,
+            width = 500,
             height =400,
             margin_t=0,
             margin_l = 100,
