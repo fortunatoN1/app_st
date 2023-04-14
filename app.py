@@ -46,7 +46,7 @@ if seletor == 'Inscrições':
     ############## INCLUSÃO DOS DADOS ##############
 
     # Servidores por avaliação
-    @st.cache_data
+
     def load_servidores():
         url1 = "https://epfsme.rio.br/public/dash/export_json.php?tabela=eventos_avaliacoes&colunas=EVENTO_ID,SERVIDOR_ID,REGIAO_ID_MATRICULA,DATA_HORA_AVALIACAO&filtro=(ACAO_ID%20IN%20(SELECT%20ACAO_ID%20FROM%20eventos_acoes%20WHERE%20(EVENTO_ID%20%3E%20127)%20AND%20(TIPO_ACAO%20=%20%27INSCRICAO%27)))"
         load_servidores = pd.read_json(url1)
@@ -59,7 +59,7 @@ if seletor == 'Inscrições':
 
 
     # Buscando o Título das formações por EVENTO_ID
-    @st.cache_data
+
     def load_lista_formacoes():
         url2 = "https://epfsme.rio.br/public/dash/export_json.php?tabela=eventos&colunas=EVENTO_ID,TITULO&filtro=(EVENTO_ID%20in%20(SELECT%20EVENTO_ID%20from%20eventos_acoes%20WHERE%20(EVENTO_ID%3E127)%20AND%20(TIPO_ACAO=%27INSCRICAO%27)))"
         load_lista_formacoes = pd.read_json(url2)
@@ -257,7 +257,7 @@ else:
     ## QUERY DE DADOS ##
 
     # Lista de servidores que avaliaram alguma ação
-    @st.cache_data
+
     def load_serv_av():
         url = "https://epfsme.rio.br/public/dash/export_json.php?tabela=eventos_avaliacoes&colunas=EVENTO_ID,SERVIDOR_ID,REGIAO_ID_MATRICULA,DATA_HORA_AVALIACAO,json_extract(RESPOSTAS,%27$.q00p011r01%27),json_extract(RESPOSTAS,'$.q01p070r01'),json_extract(RESPOSTAS,'$.q01p080r01'),json_extract(RESPOSTAS,'$.q01p090r01')&filtro=(ACAO_ID%20IN%20(SELECT%20ACAO_ID%20FROM%20eventos_acoes%20WHERE%20(EVENTO_ID%20%3E%20127)%20AND%20(TIPO_ACAO%20=%20%27AVALIACAO%27)))"
         load_serv_av = pd.read_json(url)
@@ -268,7 +268,7 @@ else:
 
 
     # Lista de eventos de avaliação
-    @st.cache_data
+
     def load_eventos_av():
         url = "https://epfsme.rio.br/public/dash/export_json.php?tabela=eventos&colunas=EVENTO_ID,TITULO&filtro=(EVENTO_ID%20in%20(SELECT%20EVENTO_ID%20from%20eventos_acoes%20WHERE%20(EVENTO_ID%3E127)%20AND%20(TIPO_ACAO=%27AVALIACAO%27)))"
         load_eventos_av = pd.read_json(url)
@@ -281,7 +281,7 @@ else:
     # Lista de cargos de respecttivos servidores IDs - REVER: Já tem esse dado na tabela servidores do BD (10/04/23)
     @st.cache_data
     def load_lista_cargos():
-        url = 'https://epfsme.rio.br/public/dash/export_json.php?tabela=servidores&colunas=DISTINCT%20SERVIDOR_ID,CARGO_MAT1&filtro=CARGO_ID_MAT1%20IN%20(22,23,24,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,72,77,85,86,87,106,107,108,109,110,111,112,113,114,115,116,117,118)'
+        url = 'https://epfsme.rio.br/public/dash/export_json.php?tabela=servidores&colunas=DISTINCT%20SERVIDOR_ID,CARGO_MAT1'
         load_lista_cargos = pd.read_json(url)
         return load_lista_cargos
 
@@ -290,7 +290,7 @@ else:
 
 
     # Lista de servidores inscritos nas ações
-    @st.cache_data
+
     def load_inscritos():
         url = "https://epfsme.rio.br/public/dash/export_json.php?tabela=eventos_avaliacoes&colunas=EVENTO_ID,SERVIDOR_ID,REGIAO_ID_MATRICULA,json_extract(RESPOSTAS,%27$.q01p010r02%27)&filtro=(ACAO_ID%20IN%20(SELECT%20ACAO_ID%20FROM%20eventos_acoes%20WHERE%20(EVENTO_ID%20%3E%20129)%20AND%20(TIPO_ACAO%20=%20%27INSCRICAO%27)))"
         load_inscritos = pd.read_json(url)
